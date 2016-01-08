@@ -1,0 +1,22 @@
+{
+  "name": "ggj-content-analyser",
+  "version": "1.0.0",
+  "description": "An app to get some content from GitHub and Tweets",
+  "main": "app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BigBearGCU/GGJ-ContentAnalyser.git"
+  },
+  "author": "Brian McDonald",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BigBearGCU/GGJ-ContentAnalyser/issues"
+  },
+  "homepage": "https://github.com/BigBearGCU/GGJ-ContentAnalyser#readme"
+}
