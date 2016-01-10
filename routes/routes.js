@@ -2,15 +2,16 @@ var path    = require('path');
 
 module.exports = function(app){
 
-    app.get('/', function(req, res){
+    //app.get('/', function(req, res){
         //res.send("Home Page")
         //redirect to public
-        res.sendFile(path.resolve('public/index.html'));
-    });
+        //res.sendFile(path.resolve('public/index.html'));
+  //  });
 
     app.post('/login',function(req,res)
     {
       //res.send("Login Page")
+      console.log('Login ',req.body);
     });
 
     app.post('/register',function(req,res)
@@ -18,9 +19,9 @@ module.exports = function(app){
       //res.send("Login Page")
     });
 
-    app.post('/searchTweets',function(req,res)
+    app.post('/search',function(req,res)
     {
-
+        console.log('Login ',req.body);
     });
 
     //other routes..

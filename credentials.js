@@ -1,0 +1,2 @@
+exports.twitterConsumerKey="wTCG21thlTVxtIpjKs6GGmNPr";
+exports.twitterSecretKey="HyjNgR9ePQX1dEBXwX34zU3fYnoSyCqKUTJhJOaxV0LQKEQUmy";

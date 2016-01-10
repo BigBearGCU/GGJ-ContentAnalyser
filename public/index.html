@@ -1,13 +1,17 @@
 <html>
-<script type='text/javascript' src='https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js'></script>
-<script type='text/javascript' src='js/viewModels/LoginModel.js'></script>
+<script src='https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='js/viewModels/LoginViewModel.js'></script>
+<script src='js/app.js'></script>
 <head>
   <title>Global Game Jam Analyser Tool</title>
 </head>
 <body>
-  <script>
-  ko.applyBindings(LoginModel);
-  </script>
-The name is <span data-bind="text: username"></span>
+  <form data-bind="submit: onSubmit">
+   <input data-bind="value : username"/>
+   <input data-bind="value : password"/>
+   <input type="submit" text="Submit!"/>
+</form>
+Response: <span data-bind="text : response"></span>
 </body>
 </html>

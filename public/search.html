@@ -1,0 +1,18 @@
+<html>
+<script src='https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='js/viewModels/SearchViewModel.js'></script>
+<script src='js/search.js'></script>
+<head>
+  <title>Global Game Jam Analyser Tool - Search</title>
+</head>
+<body>
+  <form data-bind="submit: onSubmit">
+   <input data-bind="value : searchString"/>
+   <input type="date" data-bind="value : startDate"/>
+   <input type="date" data-bind="value : endDate"/>
+   <input type="submit" text="Submit!"/>
+</form>
+<!--Response: <span data-bind="text : response"></span>-->
+</body>
+</html>
