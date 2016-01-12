@@ -8,6 +8,7 @@ var app = express();
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())
+app.set("jsonp callback", true);
 require('./routes/routes')(app);
 
 var server = app.listen(3000, function () {
