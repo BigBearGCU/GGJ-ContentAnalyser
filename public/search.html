@@ -1,7 +1,7 @@
 <html>
 <script src='https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js'></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src='js/viewModels/SearchViewModel.js'></script>
+<script src='js/viewmodels/SearchViewModel.js'></script>
 <script src='js/search.js'></script>
 <head>
   <title>Global Game Jam Analyser Tool - Search</title>
@@ -13,6 +13,10 @@
    <input type="date" data-bind="value : until"/>
    <input type="submit" text="Submit!"/>
 </form>
-<!--Response: <span data-bind="text : response"></span>-->
+<ul data-bind="foreach: searchResults">
+  <li>Name: <span data-bind="text: screenName"></span>
+    Tweet: <span data-bind="text: text"></span>
+  </li>
+</ul>
 </body>
 </html>

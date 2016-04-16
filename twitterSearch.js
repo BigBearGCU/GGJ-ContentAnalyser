@@ -19,11 +19,8 @@ module.exports={
       var searchTerm=search.query+" since:"+search.since+" until:"+search.until;
       console.log("Search Term ",searchTerm);
 
-      //var searchTerm=
+
       T.get('search/tweets', { q: searchTerm}, function(err, data, response) {
-      //console.log(data);
-      //parse tweets here
-      //res.send()
       var results=search;
       results.searchResults= new Array();
       for(var i = 0; i < data.statuses.length; i++) {
@@ -32,18 +29,8 @@ module.exports={
           //console.log(searchResult);
           results["searchResults"].push(searchResult);
       }
-      var response = {
-        status  : 200,
-        success : 'Updated Successfully'
-      }
-      //console.log(results);
-      res.header("Access-Control-Allow-Origin", "*");
-      res.header("Access-Control-Allow-Headers", "X-Requested-With");
-      res.send(200, JSON.stringify(response));
-      //res.jsonp(response);
-      res.end();
+      res.end(JSON.stringify(results));
       console.log('Response Sent');
-      //res.send("Hello");
     });
   }
 }

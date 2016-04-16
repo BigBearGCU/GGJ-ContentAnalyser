@@ -4,6 +4,7 @@ var twitterSearch =require('../twitterSearch');
 module.exports = function(app){
 
   app.all('/*', function(req, res, next) {
+    console.log('Static Content');
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     next();
@@ -25,7 +26,7 @@ module.exports = function(app){
       //res.send("Login Page")
     });
 
-    app.get('/searchTweet',function(req,res)
+    app.post('/searchTweet',function(req,res)
     {
       console.log('Search Tweet ',req.body);
       res.header('Access-Control-Allow-Origin', "*");     // TODO - Make this more secure!!

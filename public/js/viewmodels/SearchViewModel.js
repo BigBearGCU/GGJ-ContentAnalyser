@@ -4,7 +4,7 @@ function SearchViewModel(){
   self.query= ko.observable("");
   self.since = ko.observable("");
   self.until=ko.observable("");
-  self.searchResults=ko.observable();
+  self.searchResults=ko.observableArray();
 
   self.onSubmit=function()
   {
@@ -16,14 +16,17 @@ function SearchViewModel(){
     //})
     $.ajax({
       url:requestURL+searchURL,
-      type:"GET",
+      type:"POST",
       data:jsonData,
       contentType:"application/json",
       dataType:"json",
       xhrFields:{withCreditionals:true},
-      sucess:function(data){
+      success:function(data){
         //populate results
-        console.log("Success ",data);
+        for(var i = 0; i < data.searchResults.length; i++) {
+          self.searchResults.push(data.searchResults[i]);
+        }
+        console.log("Success ",searchViewModel);
       },
       error: function(jqXHR, textStatus, errorThrown ) {
         console.log("Error ",textStatus);

@@ -9,6 +9,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())
 app.set("jsonp callback", true);
+// view engine setup
 require('./routes/routes')(app);
 
 var server = app.listen(process.env.PORT || 3000, function () {
@@ -16,4 +17,5 @@ var server = app.listen(process.env.PORT || 3000, function () {
   var port = server.address().port;
 
   console.log('App listening at http://%s:%s', host, port);
+  console.log('Public Directory is '+__dirname + '/public');
 });
