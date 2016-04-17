@@ -11,8 +11,10 @@
    <input data-bind="value : query"/>
    <input type="date" data-bind="value : since"/>
    <input type="date" data-bind="value : until"/>
+   <input data-bind="value : count"/>
    <input type="submit" text="Submit!"/>
 </form>
+<button data-bind="click: onSave">Save</button>
 <ul data-bind="foreach: searchResults">
   <li>Name: <span data-bind="text: screenName"></span>
     Tweet: <span data-bind="text: text"></span>

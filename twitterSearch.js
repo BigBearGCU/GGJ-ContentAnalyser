@@ -17,18 +17,30 @@ module.exports={
       //  search twitter for all tweets containing the word 'banana' since Nov. 11, 2011
       //
       var searchTerm=search.query+" since:"+search.since+" until:"+search.until;
+
+
+      var actualSearch={}
+      if (search.max_id>0)
+      {
+        actualSearch={q: searchTerm, count:search.count, lang:"en", max_id:search.max_id}
+      }
+      else {
+        actualSearch={q: searchTerm, count:search.count, lang:"en"}
+      }
       console.log("Search Term ",searchTerm);
 
 
-      T.get('search/tweets', { q: searchTerm}, function(err, data, response) {
+
+      T.get('search/tweets', actualSearch, function(err, data, response) {
       var results=search;
       results.searchResults= new Array();
       for(var i = 0; i < data.statuses.length; i++) {
           var obj = data.statuses[i];
-          var searchResult={screenName:obj.user.screen_name,text:obj.text};
+          var searchResult={id:obj.id_str,screenName:obj.user.screen_name,text:obj.text};
           //console.log(searchResult);
           results["searchResults"].push(searchResult);
       }
+      //results.max_id=results.searchResults[0].id_str;
       res.end(JSON.stringify(results));
       console.log('Response Sent');
     });
