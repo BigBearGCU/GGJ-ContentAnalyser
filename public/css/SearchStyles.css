@@ -1,0 +1,47 @@
+body {
+    background-color: lightblue;
+}
+
+div.tweetContainer
+{
+  width:675px;
+  position: relative;
+}
+
+li.tweet
+{
+  background-color:  #ebebe0;
+  list-style-type: none;
+  width:600px;
+  padding: 25px;
+  border:2px solid navy;
+  margin:5px;
+}
+
+div.username
+{
+  width:inherit;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+div.tweet
+{
+  width:inherit;
+  padding: 5px;
+}
+
+div.date
+{
+  width:inherit;
+  padding: 5px;
+  font-size: 0.8em;
+}
+
+div.saveIcon
+{
+  position: absolute;
+  top:48%;
+  right:-30px;
+}

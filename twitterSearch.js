@@ -36,10 +36,12 @@ module.exports={
       results.searchResults= new Array();
       for(var i = 0; i < data.statuses.length; i++) {
           var obj = data.statuses[i];
-          var searchResult={id:obj.id_str,screenName:obj.user.screen_name,text:obj.text};
+          var searchResult={id:obj.id_str,screenName:obj.user.screen_name,text:obj.text,date:obj.created_at,
+          url:"https://twitter.com/"+obj.user.screen_name+"/status/"+obj.id_str,save:true};
           //console.log(searchResult);
           results["searchResults"].push(searchResult);
       }
+      results["searchResults"].reverse();
       //results.max_id=results.searchResults[0].id_str;
       res.end(JSON.stringify(results));
       console.log('Response Sent');

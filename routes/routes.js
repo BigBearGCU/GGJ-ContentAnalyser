@@ -39,7 +39,12 @@ module.exports = function(app){
 
     app.post('/saveTweets',function(req,res)
     {
-      res.end();
+      console.log('Save Tweets',req.body);
+      res.header('Access-Control-Allow-Origin', "*");     // TODO - Make this more secure!!
+      res.header('Access-Control-Allow-Methods', 'GET,PUT,POST');
+      res.header('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept');
+      resultJSON={result:"success"};
+      res.end(JSON.stringify(resultJSON));
     });
 
     //other routes..

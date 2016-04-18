@@ -4,6 +4,7 @@
 <script src='js/viewmodels/SearchViewModel.js'></script>
 <script src='js/search.js'></script>
 <head>
+  <link rel="stylesheet" type="text/css" href="css/SearchStyles.css">
   <title>Global Game Jam Analyser Tool - Search</title>
 </head>
 <body>
@@ -16,9 +17,15 @@
 </form>
 <button data-bind="click: onSave">Save</button>
 <ul data-bind="foreach: searchResults">
-  <li>Name: <span data-bind="text: screenName"></span>
-    Tweet: <span data-bind="text: text"></span>
+  <div class="tweetContainer">
+  <li class="tweet">
+    <div class="username"><span data-bind="text: screenName"></span></div>
+    <div class="tweet"><span data-bind="text: text"></span></div>
+    <div class="date"><a data-bind="attr: {href:url}"><span data-bind="text: date"></span></a></div>
   </li>
+  <div class="saveIcon" data-bind="visible: save">Save</div>
+</div>
+
 </ul>
 </body>
 </html>

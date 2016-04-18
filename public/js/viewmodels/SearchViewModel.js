@@ -29,6 +29,7 @@ function SearchViewModel(){
           self.searchResults.push(data.searchResults[i]);
         }
         self.max_id=data.searchResults[data.searchResults.length-1].id;
+        self.searchResults.reverse();
         console.log("Success ",ko.toJSON(self));
       },
       error: function(jqXHR, textStatus, errorThrown ) {
@@ -44,7 +45,7 @@ function SearchViewModel(){
   self.onSave=function()
   {
     var jsonData = ko.toJSON(self);
-    console.log("Search ",jsonData);
+    console.log("Save ",jsonData);
 
     $.ajax({
       url:requestURL+saveURL,
